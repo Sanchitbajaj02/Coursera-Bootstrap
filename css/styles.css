@@ -31,3 +31,10 @@
 .navbar-dark{
     background-color: #512DA8;
 }
+
+.tab-content{
+    border-left: 1px #ddd solid;
+    border-right: 1px #ddd solid;
+    border-bottom: 1px #ddd solid;
+    padding: 15px;
+}
