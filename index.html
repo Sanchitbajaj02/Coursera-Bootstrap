@@ -9,7 +9,7 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles-old.css">
 
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -38,8 +38,8 @@
                     <li class="nav-text"><a href="contactus.html" class="nav-link"><span
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
-                <div class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in fa-lg"> Login</span></a>
+                <div class="navbar-text" id="myModal">
+                    <a><span class="fa fa-sign-in fa-lg"> Login</span></a>
                 </div>
             </div>
         </div>
@@ -94,9 +94,8 @@
                 <div class="col-12 col-sm-3 align-self-center">
                     <img src="img/logo.png" class="img-fluid" alt="logo">
                 </div>
-                <div class="col-12 col-sm-3 align-self-center">
-                    <a href="#reserve" role="button" class="btn btn-block nav-link btn-warning" data-toggle="modal"
-                        data-target="#reservation">Reserve Table</a>
+                <div class="col-12 col-sm-3 align-self-center" id="reserveModal">
+                    <a role="button" class="btn btn-block nav-link btn-warning">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -132,24 +131,10 @@
                         </div>
                         <br>
                         <div class="row">
-                            <dt class="col-12 col-sm-3">Date &amp; Time: </dt>
-                            <div class="col-12 col-sm-9">
-                                <div class="row">
-                                    <div class="col-12 col-sm-4">
-                                        <input type="text" name="date" id="date" placeholder="Date">
-                                    </div>
-                                    <div class="col-12 col-sm-4">
-                                        <input type="text" name="time" id="time" placeholder="Time">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
                             <dt class="col-12 col-sm-3">Section:</dt>
                             <div class="col-12 col-sm-9">
                                 <div class="row">
-                                    <div class="btn-group btn-group-toggle btn-sm" data-toggle="buttons">
+                                    <div class="btn-group btn-group-toggle btn-sm active" data-toggle="buttons">
                                         <label class="btn btn-success">
                                             <input type="radio"> Non Smoking
                                         </label>
@@ -158,6 +143,20 @@
                                         <label class="btn btn-danger">
                                             <input type="radio"> Smoking
                                         </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <dt class="col-12 col-sm-3">Date &amp; Time: </dt>
+                            <div class="col-12 col-sm-9">
+                                <div class="row">
+                                    <div class="col-12 col-sm-4">
+                                        <input type="text" name="date" id="date" placeholder="Date">
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <input type="text" name="time" id="time" placeholder="Time">
                                     </div>
                                 </div>
                             </div>
@@ -420,6 +419,16 @@
                     $('#carouselButton').children('span').addClass('fa-pause');
                 }
             });
+        });
+    </script>
+    <script>
+        $('#myModal').click(function () {
+            $('#loginModal').modal('toggle');
+        });
+    </script>
+    <script>
+        $('#reserveModal').click(function () {
+            $('#reservation').modal('toggle');       
         });
     </script>
 </body>

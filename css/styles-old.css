@@ -60,3 +60,12 @@
     bottom: 0px;
     z-index: 1;
 }
+
+.modal-header{
+    background-color: #512DA8;
+    color: floralwhite;
+}
+
+.modal-content {
+    background-color: #D1C4E9;
+}
